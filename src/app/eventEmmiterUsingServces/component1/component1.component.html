@@ -1,0 +1,19 @@
+<p>
+  component1 works!
+</p>
+<span class="alert alert-danger" *ngIf="msg">
+  You added user has removed. userName is<a href="#" class="alert-link">
+    {{ msg }} </a
+  >.</span
+>
+<div class="input-group mb-3 mt-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="add username"
+    [(ngModel)]="userName"
+  />
+  <div class="input-group-append">
+    <button class="btn btn-primary" (click)="click(userName)">+</button>
+  </div>
+</div>

@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'component-communication';
+  ngOnChanges() {
+    console.log('ngOnChanges')
+  }
+  numbers = [];
+  constructor() {
+    for (let index = 0; index < 100; index++) {
+      this.numbers.push(index);
+    }
+  }
 }

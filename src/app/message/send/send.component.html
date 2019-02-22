@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body">
+    <p>Child</p>
+    <ul class="list-group" *ngIf="getMessageList.length > 0">
+      <li class="list-group-item" *ngFor="let item of getMessageList">
+        {{ item }}
+      </li>
+    </ul>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        [(ngModel)]="input2"
+      />
+      <div class="input-group-append">
+        <button class="btn btn-primary" (click)="clickSend(input2)">
+          send Back
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

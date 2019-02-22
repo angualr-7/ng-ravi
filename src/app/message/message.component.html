@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="col-lg-12">
+    <h2>Parent to Child</h2>
+    <h3>@Input() @Output()</h3>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <p>Parent</p>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of getMessageList">
+              {{ item }}
+            </li>
+          </ul>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              [(ngModel)]="input1"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-primary" (click)="sendMsg(input1)">
+                send
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <app-send
+        [sendMessage]="sendMessage"
+        (sendBackMessage)="reciveMessage($event)"
+      ></app-send>
+    </div>
+  </div>
+</div>
